@@ -15,15 +15,21 @@
     <div class="main_image">
       <img src="./image/icons8-detective-64.png" alt="magnifying-glass"
     </div>
+
     <div class="div_form">
-      <form action="">
+      <form action="./select_area.php" method="POST">
         <table class="main_image">
           <tr>
             <td>
               <span>우체국기호</span>
             </td>
             <td>
-              <input type="text" class="input_form" />
+              <input
+                type="number"
+                class="input_form"
+                name="post_code"
+                value="1"
+              />
             </td>
             <td rowspan="3">
               <button style="height: 100px">login</button>
