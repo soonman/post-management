@@ -17,7 +17,7 @@
     </div>
 
     <div class="div_form">
-      <form action="./select_area.php" method="POST">
+      <form>
         <table class="main_image">
           <tr>
             <td>
@@ -32,13 +32,16 @@
               />
             </td>
             <td rowspan="3">
-              <button style="height: 100px">login</button>
+              <button class="login_button" style="height: 100px">
+                login
+              </button>
             </td>
           </tr>
           <tr>
             <td>
-              <span>집배원코드</span>
+              <span class="test1234">집배원코드</span>
             </td>
+
             <td>
               <input type="text" />
             </td>
@@ -54,5 +57,17 @@
         </table>
       </form>
     </div>
+    <script src="js/login.js"></script>
+    <script src="js/config.js"></script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/6.4.0/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#config-web-app -->
+
+    <script>
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+    </script>
   </body>
 </html>
