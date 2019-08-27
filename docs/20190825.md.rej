@@ -1,0 +1,8 @@
+diff a/docs/20190825.md b/docs/20190825.md	(rejected hunks)
+@@ -0,0 +1,6 @@
++## Todo
++
++- [ ] 이메일 가입 후 페이지 이동(list.html)
++- [ ] 이메일로 로그인
++
++https://firebase.google.com/docs/auth/web/password-auth?hl=ko
