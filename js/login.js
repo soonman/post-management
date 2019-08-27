@@ -1,8 +1,8 @@
-console.log("load!");
+// console.log("load!");
 
-console.log(document.querySelector(".test1234"));
+// console.log(document.querySelector(".test1234"));
 
-function a() {}
+// function a() {}
 
 // document.querySelector(".login_button").addEventListener("click", function(e) {
 //   e.preventDefault();
@@ -31,6 +31,7 @@ document.querySelector(".login_button").addEventListener("click", function(e) {
     .createUserWithEmailAndPassword(email, password)
     .then(function(response) {
       console.log(response);
+      window.open("./list.html");
     })
     .catch(function(error) {
       console.log("TCL: error", error);
@@ -38,7 +39,10 @@ document.querySelector(".login_button").addEventListener("click", function(e) {
       var errorCode = error.code;
       var errorMessage = error.message;
       // ...
+      
     });
 });
 
 // window.location.href를 사용하는 것이 효과적?
+
+
