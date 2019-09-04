@@ -31,18 +31,16 @@ document.querySelector(".login_button").addEventListener("click", function(e) {
     .createUserWithEmailAndPassword(email, password)
     .then(function(response) {
       console.log(response);
-      window.open("./list.html");
+      window.location.href = "./list.html";
     })
     .catch(function(error) {
       console.log("TCL: error", error);
       // Handle Errors here.
       var errorCode = error.code;
       var errorMessage = error.message;
+      alert(errorMessage);
       // ...
-      
     });
 });
 
 // window.location.href를 사용하는 것이 효과적?
-
-
