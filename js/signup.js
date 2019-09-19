@@ -28,16 +28,17 @@ document.querySelector(".login_button").addEventListener("click", function(e) {
   // Promise
   firebase
     .auth()
-    .signInWithEmailAndPassword(email, password)
+    .createUserWithEmailAndPassword(email, password)
     .then(function(response) {
       console.log(response);
       window.location.href = "./list.html";
     })
     .catch(function(error) {
+      console.log("TCL: error", error);
       // Handle Errors here.
-      console.log(error);
       var errorCode = error.code;
       var errorMessage = error.message;
+      alert(errorMessage);
       // ...
     });
 });

@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>login</title>
-    <link rel="stylesheet" href="css/login.css" />
+    <link rel="stylesheet" href="css/signup.css" />
   </head>
   <body>
-    <h1 class="login--title">로그인?</h1>
+    <h1 class="login--title">회원가입</h1>
 
     <div class="main_image">
       <img src="./image/icons8-detective-64.png" alt="magnifying-glass"
@@ -19,6 +19,24 @@
         <table class="main_image">
           <tr>
             <td>
+              <span>우체국기호</span>
+            </td>
+            <td>
+              <input
+                type="number"
+                class="input_form"
+                name="post_code"
+                value="1"
+              />
+            </td>
+            <td rowspan="3">
+              <button class="login_button">
+                login
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <td>
               <span>이메일</span>
             </td>
 
@@ -26,16 +44,12 @@
               <input class="email_value" type="text" />
             </td>
           </tr>
-
           <tr>
             <td>
               <span>비밀번호</span>
             </td>
             <td>
               <input class="pw_value" type="password" />
-            </td>
-            <td rowspan="2">
-              <button class="login_button">login</button>
             </td>
           </tr>
         </table>
@@ -47,7 +61,7 @@
       src="https://www.gstatic.com/firebasejs/6.4.0/firebase-auth.js"
     ></script>
     <script src="js/config.js"></script>
-    <script src="js/login.js"></script>
+    <script src="js/signup.js"></script>
     <!-- The core Firebase JS SDK is always required and must be listed first -->
   </body>
 </html>
