@@ -4,7 +4,7 @@
 
 // function a() {}
 
-// document.querySelector(".login_button").addEventListener("click", function(e) {
+// document.querySelector(".signup_button").addEventListener("click", function(e) {
 //   e.preventDefault();
 
 //   alert("hi!");
@@ -12,13 +12,13 @@
 
 // 네이버페이지 이동성공
 
-// document.querySelector(".login_button").addEventListener("click", function(e){
+// document.querySelector(".signup_button").addEventListener("click", function(e){
 //   e.preventDefault();
 //   window.location.href="http://www.naver.com";
 // })
 firebase.initializeApp(firebaseConfig);
 
-document.querySelector(".login_button").addEventListener("click", function(e) {
+document.querySelector(".signup_button").addEventListener("click", function(e) {
   e.preventDefault();
   // window.open("list.html");
 
