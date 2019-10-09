@@ -30,8 +30,10 @@ document.querySelector(".login_button").addEventListener("click", function(e) {
     .auth()
     .signInWithEmailAndPassword(email, password)
     .then(function(response) {
-      console.log(response);
+      console.log(response.user.email);
+      Cookies.set("email", response.user.email);
       window.location.href = "./list.html";
+      Cookies.get("email");
     })
     .catch(function(error) {
       // Handle Errors here.
