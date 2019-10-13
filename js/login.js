@@ -31,10 +31,11 @@ document.querySelector(".login_button").addEventListener("click", function(e) {
     .signInWithEmailAndPassword(email, password)
     .then(function(response) {
       console.log(response.user.email);
-      Cookies.set("email", response.user.email);
+
+      Cookies.set("who", response.user.email);
       Cookies.get(response.user.email);
-      console.log(Cookies.set("email", response.user.email));
-      window.location.href = "./list.html";
+      console.log(Cookies.set("who", response.user.email));
+      // window.location.href = "./list.html";
     })
     .catch(function(error) {
       // Handle Errors here.
