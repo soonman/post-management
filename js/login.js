@@ -32,6 +32,8 @@ document.querySelector(".login_button").addEventListener("click", function(e) {
     .then(function(response) {
       console.log(response.user.email);
       Cookies.set("email", response.user.email);
+      Cookies.get(response.user.email);
+      console.log(Cookies.set("email", response.user.email));
       window.location.href = "./list.html";
     })
     .catch(function(error) {
