@@ -33,7 +33,6 @@ document.querySelector(".login_button").addEventListener("click", function(e) {
       console.log(response.user.email);
       Cookies.set("email", response.user.email);
       window.location.href = "./list.html";
-      Cookies.get("email");
     })
     .catch(function(error) {
       // Handle Errors here.
