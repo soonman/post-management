@@ -1,2 +1,2 @@
-console.log(Cookies.get("email"));
-document.write(Cookies.get("email"));
+// console.log(Cookies.get("email"));
+// document.write(Cookies.get("email"));
