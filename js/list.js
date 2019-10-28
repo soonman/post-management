@@ -23,12 +23,15 @@ firebase.initializeApp({
 });
 
 var db = firebase.firestore();
+var first_db = document.querySelector(".first_value").value;
+var last_db = document.querySelector(".last_value").value;
+var born_db = document.querySelector(".born_value").value;
 
 db.collection("users")
   .add({
-    first: "ㅎㅎ",
-    last: "ㅋㅋ",
-    born: 1990
+    first: first_db,
+    last: last_db,
+    born: born_db
   })
   .then(function(docRef) {
     console.log("Document written with ID: ", docRef.id);
