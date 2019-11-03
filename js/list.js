@@ -23,19 +23,26 @@ firebase.initializeApp({
 });
 
 var db = firebase.firestore();
-var first_db = document.querySelector(".first_value").value;
-var last_db = document.querySelector(".last_value").value;
-var born_db = document.querySelector(".born_value").value;
 
-db.collection("users")
-  .add({
-    first: first_db,
-    last: last_db,
-    born: born_db
-  })
-  .then(function(docRef) {
-    console.log("Document written with ID: ", docRef.id);
-  })
-  .catch(function(error) {
-    console.error("Error adding document: ", error);
-  });
+function addUser() {
+  var first = document.querySelector(".first_value").value;
+  var last = document.querySelector(".last_value").value;
+  var born = document.querySelector(".born_value").value;
+
+  db.collection("users")
+    .add({
+      first,
+      last,
+      born
+    })
+    .then(function(docRef) {
+      console.log("Document written with ID: ", docRef.id);
+    })
+    .catch(function(error) {
+      console.error("Error adding document: ", error);
+    });
+}
+
+document.querySelector(".first_button").addEventListener("click", function() {
+  addUser();
+});
