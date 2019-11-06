@@ -1,4 +1,4 @@
-console.log(Cookies.get("who"));
+// console.log(Cookies.get("who"));
 document.write(Cookies.get("who"));
 
 document.querySelector(".logout_button").addEventListener("click", function(e) {
@@ -10,7 +10,7 @@ document.querySelector(".logout_button").addEventListener("click", function(e) {
 });
 
 if (Cookies.get("who")) {
-  console.log(Cookies.get("who"));
+  // console.log(Cookies.get("who"));
 } else {
   window.location.href = "./login.html";
 }
@@ -23,6 +23,15 @@ firebase.initializeApp({
 });
 
 var db = firebase.firestore();
+var usersRef = db.collection("users");
+// console.log("TCL: usersRef", usersRef);
+
+usersRef.get().then(function(querySnapshot) {
+  querySnapshot.forEach(function(doc) {
+    console.log("TCL: doc.data().first" + doc.data().first);
+    $(".list ul").append($("<li>" + doc.data().first + "</li>"));
+  });
+});
 
 function addUser() {
   var first = document.querySelector(".first_value").value;
