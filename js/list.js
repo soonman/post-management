@@ -29,7 +29,9 @@ var usersRef = db.collection("users");
 usersRef.get().then(function(querySnapshot) {
   querySnapshot.forEach(function(doc) {
     console.log("TCL: doc.data().first" + doc.data().first);
-    $(".list ul").append($("<li>" + doc.data().first + "</li>"));
+    $(".list ul").append(
+      $("<li>" + doc.data().first + doc.data().last + "</li>")
+    );
   });
 });
 
