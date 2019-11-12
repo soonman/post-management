@@ -1,5 +1,14 @@
 # post-management
 
+## Backlog
+
+- [ ]
+
+## Todo
+
+- [ ] 아파트 리스트 눌렀을 때 뷰 만들기(HTML, CSS, FireStore get())
+- [ ] 아파트 리스트 눌렀을 때 뷰에서 수정하기(Firebase FireStore Edit(update()) 기능)
+
 ## 숙제
 
 - [ ] first, last name을 조합해서 출력해보세요
