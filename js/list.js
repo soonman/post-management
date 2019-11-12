@@ -28,14 +28,21 @@ var usersRef = db.collection("users");
 
 usersRef.get().then(function(querySnapshot) {
   querySnapshot.forEach(function(doc) {
-    var list_ul = $("#list ul").append(
-      $("<li>" + doc.data().first + doc.data().last + doc.data().born + "</li>")
+    $("#list ul").append(
+      $(
+        "<a href='https://www.naver.com'><li>" +
+          doc.data().first +
+          doc.data().last +
+          doc.data().born +
+          "</li><a/>"
+      )
     );
 
-    console.log("TCL: doc.data().first" + doc.data().first);
-    list_ul;
-    var move = (window.href = "https://www.naver.com");
-    $("#list ul").append($("<a>" + move + "</a>"));
+    // console.log("TCL: doc.data().first" + doc.data().first);
+    // list_ul;
+    // $("#list ul").append(
+    //   $('<a href="https://www.naver.com"' + "move" + "</a>")
+    // );
   });
 });
 
