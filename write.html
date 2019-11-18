@@ -11,6 +11,56 @@
     <div class="test">
       하이
     </div>
+    <div>
+      <table>
+        <thead>
+          <h1>수취인불명, 특별관리고객 입력하시오</h1>
+        </thead>
+        <tbody>
+          <tr>
+            <td>아파트</td>
+            <td>
+              <select class="apt_list">
+                <option value="cheonsol_1">청솔1차</option>
+                <option value="taeyoung_1">태영1차</option>
+                <option value="taeyoung_2">태영2차</option>
+                <option value="ilsung_5">월봉일성</option>
+                <option value="wolbong_daewoo">월봉대우</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>동</td>
+            <td>
+              <input class="dong" type="number" />
+            </td>
+          </tr>
+          <tr>
+            <td>호</td>
+            <td>
+              <input class="ho" type="number" />
+            </td>
+          </tr>
+          <tr>
+            <td>수취인불명 기재 및 고객요청사항</td>
+            <td>
+              <textarea id="requirement" cols="30" rows="10"></textarea>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <button class="save_button">저장</button>
+              <button class="reset_button">초기화</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-firestore.js"></script>
+    <script src="js/lib/js.cookie-2.2.1.min.js"></script>
+    <script src="js/lib/jquery-3.4.1.min.js"></script>
+    <script src="js/config.js"></script>
     <script src="js/write.js"></script>
   </body>
 </html>
