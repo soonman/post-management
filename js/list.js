@@ -28,14 +28,9 @@ var usersRef = db.collection("users");
 
 usersRef.get().then(function(querySnapshot) {
   querySnapshot.forEach(function(doc) {
+    var name = `${doc.data().first}${doc.data().last}${doc.data().born}`;
     $("#list ul").append(
-      $(
-        "<a href='https://www.naver.com'><li>" +
-          doc.data().first +
-          doc.data().last +
-          doc.data().born +
-          "</li><a/>"
-      )
+      $(`<a href=/write.html?name=${name}><li>${name}</li><a/>`)
     );
 
     // console.log("TCL: doc.data().first" + doc.data().first);
