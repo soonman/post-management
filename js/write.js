@@ -2,24 +2,24 @@ document.querySelector(".save_button").addEventListener("click", function() {
   alert("hi");
 });
 
-// function addUser() {
-//   var first = document.querySelector(".first_value").value;
-//   var last = document.querySelector(".last_value").value;
-//   var born = document.querySelector(".born_value").value;
+firebase.initializeApp({
+  apiKey: firebaseConfig.apiKey,
+  authDomain: firebaseConfig.authDomain,
+  projectId: firebaseConfig.projectId
+});
 
-//   db.collection("users")
-//     .add({
-//       first,
-//       last,
-//       born
-//     })
-//     .then(function(docRef) {
-//       console.log("Document written with ID: ", docRef.id);
-//     })
-//     .catch(function(error) {
-//       console.error("Error adding document: ", error);
-//     });
-// }
+var db = firebase.firestore();
+var usersRef = db.collection("users");
+// console.log("TCL: usersRef", usersRef);
+
+usersRef.get().then(function(querySnapshot) {
+  querySnapshot.forEach(function(doc) {
+    var name = `${doc.data().first}${doc.data().last}${doc.data().born}`;
+    $("#title_name").append(
+      $(`<a href=/write.html?name=${name}><li>${name}</li><a/>`)
+    );
+  });
+});
 
 var getUrlParameter = function(sParam) {
   var sPageURL = decodeURIComponent(window.location.search.substring(1)),
