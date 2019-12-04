@@ -15,8 +15,15 @@ var usersRef = db.collection("users");
 usersRef.get().then(function(querySnapshot) {
   querySnapshot.forEach(function(doc) {
     var name = `${doc.data().first}${doc.data().last}${doc.data().born}`;
-    $("#title_name").append(
-      $(`<a href=/write.html?name=${name}><li>${name}</li><a/>`)
+    $("#title_name").append($(`<h1><li>${name}</li><h1><a/>`));
+  });
+});
+
+usersRef.get().then(function(querySnapshot) {
+  querySnapshot.forEach(function(doc) {
+    var name = `${doc.data().first}`;
+    $("#apt_list").append(
+      $(`<h2><select><option>${name}</option></select></h2>`)
     );
   });
 });
@@ -35,5 +42,3 @@ var getUrlParameter = function(sParam) {
     }
   }
 };
-
-console.log(getUrlParameter("name"));
