@@ -30,7 +30,7 @@ usersRef.get().then(function(querySnapshot) {
   querySnapshot.forEach(function(doc) {
     var name = `${doc.data().first}${doc.data().last}${doc.data().born}`;
     $("#list ul").append(
-      $(`<a href=/write.html?name=${name}><li>${name}</li><a/>`)
+      $(`<li><a href=/write.html?name=${name}><span>${name}</span><a/></li>`)
     );
 
     // console.log("TCL: doc.data().first" + doc.data().first);

@@ -10,10 +10,11 @@ firebase.initializeApp({
 
 var db = firebase.firestore();
 var usersRef = db.collection("users");
-// console.log("TCL: usersRef", usersRef);
+var docRef = db.collection("users").doc("asjdfklasjdklfls");
 
 usersRef.get().then(function(querySnapshot) {
   querySnapshot.forEach(function(doc) {
+    console.log("TCL: doc", doc.data());
     var name = `${doc.data().first}${doc.data().last}${doc.data().born}`;
     $("#title_name").append($(`<h1><li>${name}</li><h1><a/>`));
   });
@@ -22,9 +23,21 @@ usersRef.get().then(function(querySnapshot) {
 usersRef.get().then(function(querySnapshot) {
   querySnapshot.forEach(function(doc) {
     var name = `${doc.data().first}`;
-    $("#apt_list").append(
-      $(`<h2><select><option>${name}</option></select></h2>`)
-    );
+    $("#apt_list").append($(`<option value=${name}>${name}</option>`));
+  });
+});
+
+usersRef.get().then(function(querySnapshot) {
+  querySnapshot.forEach(function(doc) {
+    var name = `${doc.data().last}`;
+    $("#dong_list").append($(`<option value=${name}>${name}</option>`));
+  });
+});
+
+usersRef.get().then(function(querySnapshot) {
+  querySnapshot.forEach(function(doc) {
+    var name = `${doc.data().born}`;
+    $("#ho_list").append($(`<option value=${name}>${name}</option>`));
   });
 });
 
