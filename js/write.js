@@ -1,5 +1,5 @@
 document.querySelector(".save_button").addEventListener("click", function() {
-  alert("hi");
+  window.location.href = "https://www.naver.com";
 });
 
 firebase.initializeApp({
