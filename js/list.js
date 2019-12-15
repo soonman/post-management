@@ -1,5 +1,5 @@
 // console.log(Cookies.get("who"));
-document.write(Cookies.get("who"));
+// document.write(Cookies.get("who"));
 
 document.querySelector(".logout_button").addEventListener("click", function(e) {
   e.preventDefault();
@@ -28,12 +28,12 @@ var usersRef = db.collection("users");
 
 usersRef.get().then(function(querySnapshot) {
   querySnapshot.forEach(function(doc) {
-    var name = `${doc.data().first}${doc.data().last}${doc.data().born}`;
+    var name = `${doc.data().apt_list}`;
     $("#list ul").append(
       $(`<li><a href=/write.html?name=${name}><span>${name}</span><a/></li>`)
     );
 
-    // console.log("TCL: doc.data().first" + doc.data().first);
+    // console.log("TCL: doc.data().apt" + doc.data().apt);
     // list_ul;
     // $("#list ul").append(
     //   $('<a href="https://www.naver.com"' + "move" + "</a>")
@@ -42,15 +42,13 @@ usersRef.get().then(function(querySnapshot) {
 });
 
 function addUser() {
-  var first = document.querySelector(".first_value").value;
-  var last = document.querySelector(".last_value").value;
-  var born = document.querySelector(".born_value").value;
+  var apt_list = document.querySelector(".apt_name").value;
+  // var dong = document.querySelector(".dong_value").value;
+  // var ho = document.querySelector(".ho_value").value;
 
   db.collection("users")
     .add({
-      first,
-      last,
-      born
+      apt_list
     })
     .then(function(docRef) {
       console.log("Document written with ID: ", docRef.id);
@@ -60,6 +58,6 @@ function addUser() {
     });
 }
 
-document.querySelector(".first_button").addEventListener("click", function() {
+document.querySelector(".add_button").addEventListener("click", function() {
   addUser();
 });
