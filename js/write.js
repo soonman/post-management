@@ -39,14 +39,18 @@ document.querySelector(".save_button").addEventListener("click", function() {
 });
 
 // console.log(addUser());
+const url = new URL(window.location.href);
+const name = url.searchParams.get("name");
 
-usersRef2.get().then(function(querySnapshot) {
-  querySnapshot.forEach(function(doc) {
-    console.log("TCL: doc", doc.data());
-    var name = `${doc.data().apt_list}`;
-    $("#title_name").append($(`<h1><li>${name}</li><h1><a/>`));
-  });
-});
+$("#title_name").append($(`<li>${name}</li>`));
+
+// usersRef2.get().then(function(querySnapshot) {
+//   querySnapshot.forEach(function(doc) {
+//     console.log("TCL: doc", doc.data());
+//     var name = `${doc.data().apt_list}`;
+//     $("#title_name").append($(`<h1><li>${name}</li><h1>`));
+//   });
+// });
 
 usersRef.get().then(function(querySnapshot) {
   querySnapshot.forEach(function(doc) {
