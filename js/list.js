@@ -34,14 +34,14 @@ usersRef.get().then(function(querySnapshot) {
     $("#list ul").append(
       $(`<li><a href=/write.html?name=${name}><span>${name}</span><a/></li>`)
     );
-
-    // console.log("TCL: doc.data().apt" + doc.data().apt);
-    // list_ul;
-    // $("#list ul").append(
-    //   $('<a href="https://www.naver.com"' + "move" + "</a>")
-    // );
   });
 });
+
+// console.log("TCL: doc.data().apt" + doc.data().apt);
+// list_ul;
+// $("#list ul").append(
+//   $('<a href="https://www.naver.com"' + "move" + "</a>")
+// );
 
 function addUser() {
   var apt_list = document.querySelector(".apt_name").value;

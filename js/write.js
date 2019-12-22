@@ -14,14 +14,14 @@ var usersRef2 = db.collection("users");
 // var docRef = db.collection("users").doc("asjdfklasjdklfls");
 
 function addUser() {
-  var apt = document.querySelector(".apt_list").value;
-  var dong = document.querySelector("#dong_list").value;
-  var ho = document.querySelector("#ho_list").value;
+  // var apt = document.querySelector(".apt_list").value;
+  var dong = document.querySelector("#dong_input").value;
+  var ho = document.querySelector("#ho_input").value;
   var require = document.querySelector("#requirement").value;
 
   db.collection("apt")
     .add({
-      apt,
+      // apt,
       dong,
       ho,
       require
@@ -38,40 +38,27 @@ document.querySelector(".save_button").addEventListener("click", function() {
   addUser();
 });
 
-// console.log(addUser());
+usersRef.get().then(function(querySnapshot) {
+  querySnapshot.forEach(function(doc) {
+    var name = `${doc.data().dong} ${doc.data().ho} ${doc.data().require}`;
+    $("#dong_list ul").append(
+      $(`<li><a href=/write.html?name=${name}><span>${name}</span><a/></li>`)
+    );
+  });
+});
+
+// var show = usersRef.get().then(function(querySnapshot) {
+//   querySnapshot.forEach(function(doc) {
+//     var name = `${doc.data().dong} ${doc.data().ho} ${doc.data().require}`;
+//     alert("hello");
+//   });
+// });
+
 const url = new URL(window.location.href);
 const name = url.searchParams.get("name");
 
 $("#title_name").append($(`<li>${name}</li>`));
-
-// usersRef2.get().then(function(querySnapshot) {
-//   querySnapshot.forEach(function(doc) {
-//     console.log("TCL: doc", doc.data());
-//     var name = `${doc.data().apt_list}`;
-//     $("#title_name").append($(`<h1><li>${name}</li><h1>`));
-//   });
-// });
-
-usersRef.get().then(function(querySnapshot) {
-  querySnapshot.forEach(function(doc) {
-    var name = `${doc.data().apt}`;
-    $("#apt_select").append($(`<option value=${name}>${name}</option>`));
-  });
-});
-
-usersRef.get().then(function(querySnapshot) {
-  querySnapshot.forEach(function(doc) {
-    var name = `${doc.data().dong}`;
-    $("#dong_list").append($(`<option value=${name}>${name}</option>`));
-  });
-});
-
-usersRef.get().then(function(querySnapshot) {
-  querySnapshot.forEach(function(doc) {
-    var name = `${doc.data().ho}`;
-    $("#ho_list").append($(`<option value=${name}>${name}</option>`));
-  });
-});
+$(".apt_list").append($(`<p>${name}</p>`));
 
 var getUrlParameter = function(sParam) {
   var sPageURL = decodeURIComponent(window.location.search.substring(1)),

@@ -18,6 +18,13 @@
 // })
 firebase.initializeApp(firebaseConfig);
 
+document
+  .querySelector(".sign_up_button")
+  .addEventListener("click", function(e) {
+    e.preventDefault();
+    window.location.href = "./signup.html";
+  });
+
 document.querySelector(".login_button").addEventListener("click", function(e) {
   e.preventDefault();
   // window.open("list.html");
