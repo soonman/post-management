@@ -34,7 +34,7 @@ aptRef.get().then(function(querySnapshot) {
     var require = doc.data().require;
     $("#list ul").append(
       $(
-        `<li><a href=/write.html?name=${name}&dong=${dong}&ho=${ho}&require=${require}><span>${name}</span><a/></li>`
+        `<li><a href=write.html?name=${name}&dong=${dong}&ho=${ho}&require=${require}><span>${name}</span><a/></li>`
       )
     );
   });
