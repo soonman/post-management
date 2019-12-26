@@ -10,9 +10,7 @@ document
     console.log(Cookies.remove("who"));
     window.location.href = "./login.html";
   });
-
 if (Cookies.get("who")) {
-  // console.log(Cookies.get("who"));
 } else {
   window.location.href = "./login.html";
 }
