@@ -25,14 +25,19 @@ firebase.initializeApp({
 });
 
 var db = firebase.firestore();
-var usersRef = db.collection("users");
+var aptRef = db.collection("apt");
 // console.log("TCL: usersRef", usersRef);
 
-usersRef.get().then(function(querySnapshot) {
+aptRef.get().then(function(querySnapshot) {
   querySnapshot.forEach(function(doc) {
-    var name = `${doc.data().apt_list}`;
+    var name = doc.data().name;
+    var dong = doc.data().dong;
+    var ho = doc.data().ho;
+    var require = doc.data().require;
     $("#list ul").append(
-      $(`<li><a href=/write.html?name=${name}><span>${name}</span><a/></li>`)
+      $(
+        `<li><a href=/write.html?name=${name}&dong=${dong}&ho=${ho}&require=${require}><span>${name}</span><a/></li>`
+      )
     );
   });
 });
