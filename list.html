@@ -6,49 +6,58 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>list</title>
     <link rel="stylesheet" href="css/list.css" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
   </head>
   <body>
-    <header class="badge badge-primary text-wrap " style="width: 6rem;">
-      <h1>목록</h1>
-    </header>
-    <div id="list">
-      <ul></ul>
-    </div>
-    <!-- <div class="logout_button">
-      <button>logout</button>
-    </div> -->
-    <div>
-      <input class="apt_name" type="text" />
-      <!-- <button class="add_button">입력</button> -->
-      <button type="button" class="btn btn-warning add_button">입력</button>
-      <div id="loading" class="text-center d-none" aria-hidden="true">
-        <div class="spinner-border" role="status">
-          <span class="sr-only">Loading...</span>
+    <div class="card list_card" style="width: 18rem;">
+      <header class="badge badge-primary text-wrap" style="width: 6rem;">
+        <h1>목록</h1>
+      </header>
+      <div class="list_card_body">
+        <div id="list">
+          <ul></ul>
         </div>
       </div>
-      <!-- <p class="text-center">Center aligned text on all viewport sizes.</p> -->
-    <!-- </div>
-    <div>
-      <input class="dong_value" type="text" />
     </div>
     <div>
-      <input class="ho_value" type="number" />
-    </div> -->
-    <div class="fixed-bottom text-center logout_button">
-      <button>logout</button></div>
+      <input class="apt_name" type="text" />
+
+      <button type="button" class="btn btn-warning add_button">입력</button>
+
+      <button type="button" class="logout_button btn btn-danger">logout</button>
+    </div>
+
+    <div id="loading" class="text-center d-none" aria-hidden="true">
+      <div class="spinner-border" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+    </div>
+
     <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-firestore.js"></script>
     <script src="js/lib/js.cookie-2.2.1.min.js"></script>
     <script src="js/lib/jquery-3.4.1.min.js"></script>
     <script src="js/config.js"></script>
     <script src="js/list.js"></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
-<!-- [ ] list.html에서 
-input, button 태그 등을 이용하여 
-유저 생성하는 form만들어보기
-(first, last, born(숫자만 받게 해보세요) 입력) -->

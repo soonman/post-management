@@ -1,15 +1,13 @@
 // console.log(Cookies.get("who"));
 // document.write(Cookies.get("who"));
 
-document
-  .querySelector(".logout_button > button")
-  .addEventListener("click", function(e) {
-    e.preventDefault();
-    Cookies.remove("who");
-    alert("Cookie삭제, 로그아웃 되었습니다");
-    console.log(Cookies.remove("who"));
-    window.location.href = "./login.html";
-  });
+document.querySelector(".logout_button").addEventListener("click", function(e) {
+  e.preventDefault();
+  Cookies.remove("who");
+  alert("Cookie삭제, 로그아웃 되었습니다");
+  console.log(Cookies.remove("who"));
+  window.location.href = "./login.html";
+});
 if (Cookies.get("who")) {
 } else {
   window.location.href = "./login.html";
@@ -24,21 +22,26 @@ firebase.initializeApp({
 
 var db = firebase.firestore();
 var aptRef = db.collection("apt");
-// console.log("TCL: usersRef", usersRef);
 
-aptRef.get().then(function(querySnapshot) {
-  querySnapshot.forEach(function(doc) {
-    var name = doc.data().name;
-    var dong = doc.data().dong;
-    var ho = doc.data().ho;
-    var require = doc.data().require;
-    $("#list ul").append(
-      $(
-        `<li><a href=write.html?name=${name}&dong=${dong}&ho=${ho}&require=${require}><span>${name}</span><a/></li>`
-      )
-    );
+aptRef
+  .get()
+  .then(function(querySnapshot) {
+    querySnapshot.forEach(function(doc) {
+      var name = doc.data().name;
+      var dong = doc.data().dong;
+      var ho = doc.data().ho;
+      var require = doc.data().require;
+      $("#list ul").append(
+        $(
+          `<li><a href=write.html?name=${name}&dong=${dong}&ho=${ho}&require=${require}><span>${name}</span><a/></li>`
+        )
+      );
+    });
+  })
+  .catch(error => {
+    console.log("TCL: error", error);
+    console.error(error);
   });
-});
 
 // console.log("TCL: doc.data().apt" + doc.data().apt);
 // list_ul;
